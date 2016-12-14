@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Classroom Manager</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Classroom Manager</a>
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">Dashboard</a>
+					</li>
+					<li>
+						<a href="#">Classes</a>
+					</li>
+					<li>
+						<a href="#">Students</a>
+					</li>
+					<li>
+						<a href="#">Teachers</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div ui-view></div>
+
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+ 		<script src="bower_components/angular/angular.js"></script>
+ 		<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+ 		<script src="app/app.module.js"></script>
+ 		<script src="app/dashboard/dashboard.controller.js"></script>
+ 		<script src="app/class/class.grid.controller.js"></script>
+ 		<script src="app/class/class.detail.controller.js"></script>
+ 		<script src="app/student/student.grid.controller.js"</script>
+ 		<script src="app/teacher/teacher.grid.controller.js"></script>
+ 		<script src="app/student/student.detail.controller.js"></script>
+ 		<script src="app/teacher/teacher.detail.controller.js"></script>
+ 		<script src="app/teacher/teacher.grid.controller.js"></script>
+	</body>
+</html
