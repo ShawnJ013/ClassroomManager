@@ -1,0 +1,31 @@
+<div>
+	
+	<button ui-sref="student.detail" type="button" class="btn btn-primary navbar-btn pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add Student</button>
+</div>
+<div>
+	<div class="panel-body">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Telephone</th>
+					<th>Classes</th>
+					<th width="1%"></th>
+					<th widtd="1%"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="student in studentGridCtrl.students">
+					<td>{{student.name}}</td>
+					<td>{{student.emailAddress}}</td>
+					<td>{{student.telephone}}</td>
+					<td>{{student.count}}</td>
+					<td>
+						<button ui-sref="student.detail({id:{{student.studentId}}})" type="button" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-edit"></span> </button>
+					</td>
+					<td><button type="button" class="btn btn-danger pull-right" ng-click="studentGridCtrl.delStudent(student)"><span class="glyphicon glyphicon-remove"></span> </button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>

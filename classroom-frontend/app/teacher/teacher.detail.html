@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div>
+        <div class="panel panel-primary">
+            <div class="panel-heading"> Edit Teacher </div>
+            <form>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="Name" class="form-control" ng model="teacherDetailCtrl.teacher.firstName">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="Name" class="form-control" ng-model="teacherDetailCtrl.teacher.lastName">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="Email" class="form-control" ng-model="teacherDetailCtrl.teacher.emailAddress">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Telephone</label>
+                                <input type="Tel" class="form-control" ng-model="teacherDetailCtrl.teacher.telephone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer clearfix">
+			 	<button class="btn btn-primary pull-right" ng-click="teacherDetailCtrl.save()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+			 	</div>
+			</form>
+		</div>
+	</div>
+<div class="panel panel-primary ">
+	<!-- Default panel contents -->
+	<div class="panel-heading ">Classes</div>
+	<div class="container-fluid ">
+		<table class="table ">
+			<thead>
+				<tr>
+					<div class="row ">
+						<div class="col-sm-3 ">
+							<th>Name</th>
+							<th>Start Date</th>
+							<th>End Date</th>
+						</div>
+					</div>
+				</tr>
+			</thead>
+		<tbody>
+			<div class="row ">
+				<div class="col-sm-3 ">
+			<tr ng-repeat="class in teacherDetailCtrl.teacher.classes ">
+				<td>{{class.name}}</td>
+				<td>{{class.startDate | date}}</td>
+				<td>{{class.endDate | date}</td>
+			</tr>
+		</div>
+		</div>
+		</tbody>
+		</table>
+		</div>
+		</div>
+	</div>
+</div>

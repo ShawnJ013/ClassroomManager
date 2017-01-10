@@ -1,0 +1,29 @@
+{
+  "name": "classroom-frontend",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "resolutions": {
+    "angular": "^1.6.1"
+  }
+}

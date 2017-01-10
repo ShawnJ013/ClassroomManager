@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <div>
+        <div class="panel panel-primary">
+            <div class="panel-heading"> {{classDetailCtrl.classId ? 'Edit' : 'Add'}} Class</div>
+            <form>
+                <div class="panel panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label>Name</label>
+                            <input type="Name" class="form-control" ng-model="classDetailCtrl.class.name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Teacher</label>
+                            <select ng-options="teacher.teacherId as teacher.name for teacher in classDetailCtrl.teachers" class="form-control" ng-model="classDetailCtrl.class.teacherId">
+                                <option value="" disabled selected>{{classDetailCtrl.class.teacher.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Start Date</label>
+                            <input type="date" class="form-control" ng-model="classDetailCtrl.class.startDate">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                            <div class="form-group">
+                                <label>End Date</label>
+                                <input type="date" class="form-control" ng-model="classDetailCtrl.class.endDate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer clearfix">
+                        <button class="btn btn-primary pull-right" ng-click="classDetailCtrl.save()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                    </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <div class="panel-title">
+                    Students enrolled in {{classDetailCtrl.class.name}}
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="container-fluid">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Telephone</th>
+                                <th>Classes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="student in classDetailCtrl.class.students">
+                                <td>{{student.name}}</td>
+                                <td>{{student.emailAddress}}</td>
+                                <td>{{student.telephone}}</td>
+                                <td>{{student.count}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger pull-right" ng-click="classDetailCtrl.removeEnrollment(classDetailCtrl.classId, student.studentId)"><span class="glyphicon glyphicon-remove"></span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel-footer clearfix">
+                <div class="col-sm-3">
+                    <select class="form-control" ng-options="student.studentId as student.name for student in classDetailCtrl.students" ng-model="classDetailCtrl.studentId">
+                        <option value="" disabled selected>--- Select Student ---</option>
+                    </select>
+                </div>
+                <button ng-click="classDetailCtrl.newEnrollment(classDetailCtrl.classId, classDetailCtrl.studentId)" type="button" class="btn btn-primary pull-right">
+                    <span class="glyphicon glyphicon-plus"></span> Add Student to Class
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+    <div>
+        <div class="panel panel-primary">
+            <div class="panel-heading"> Edit student </div>
+            <form>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="Name" class="form-control" ng model="studentDetailCtrl.student.firstName">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="Name" class="form-control" ng-model="studentDetailCtrl.student.lastName">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="Email" class="form-control" ng-model="studentDetailCtrl.student.emailAddress">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Telephone</label>
+                                <input type="Tel" class="form-control" ng-model="studentDetailCtrl.student.telephone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer clearfix">
+                    <button class="btn btn-primary pull-right" ng-click="studentDetailCtrl.save()">
+                        <span class="glyphicon glyphicon-floppy-disk"></span> Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div class="panel panel-primary">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Classes</div>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Teacher</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="class in studentDetailCtrl.student.classes">
+                    <td>{{class.name}}</td>
+                    <td>{{class.teacher.name}}</td>
+                    <td>{{class.startDate | date}}</td>
+                    <td>{{class.endDate | date}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</div>
